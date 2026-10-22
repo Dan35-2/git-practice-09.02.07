@@ -1,0 +1,20 @@
+# Игнорируем папки с результатами сборки
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+
+# Игнорируем временные и пользовательские файлы
+*.suo
+*.user
+*.sln.docstates
+*.userosscache
+*.sln.docstates
+
+# Игнорируем файлы пакетов NuGet
+*.nupkg
+packages/
+
+# Игнорируем логи и служебные файлы
+*.log
+*.suo
