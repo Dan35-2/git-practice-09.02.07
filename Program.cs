@@ -10,7 +10,7 @@ namespace SuperCalculate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--- Калькулятор умножения или сложения двух чисел ---");
+            Console.WriteLine("--- Калькулятор вычисления ---");
 
             Console.Write("Введите первое число: ");
             double number1 = Convert.ToDouble(Console.ReadLine());
@@ -21,7 +21,7 @@ namespace SuperCalculate
             bool vihod = false;
             do
             {
-                Console.Write("Введите знак операции (+ * v): ");
+                Console.Write("Введите знак операции (+ * / v): ");
                 char symbol = Convert.ToChar(Console.ReadLine());
 
                 double sum = 0;
@@ -34,6 +34,17 @@ namespace SuperCalculate
                     case '*':
                         sum = number1 * number2;
                         Console.WriteLine($"Результат умножения: {number1} * {number2} = {sum}");
+                        break;
+                    case '/':
+                        sum = number1 / number2;
+                        if (number2 == 0)
+                        {
+                            Console.WriteLine("Ошибка! Деление на ноль не возможно.");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Результат деления: {number1} / {number2} = {sum}");
+                        }
                         break;
                     case 'v':
                         vihod = true;
