@@ -10,7 +10,7 @@ namespace SuperCalculate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--- Калькулятор сложения двух чисел ---");
+            Console.WriteLine("--- Калькулятор умножения или сложения двух чисел ---");
 
             Console.Write("Введите первое число: ");
             double number1 = Convert.ToDouble(Console.ReadLine());
@@ -18,9 +18,31 @@ namespace SuperCalculate
             Console.Write("Введите второе число: ");
             double number2 = Convert.ToDouble(Console.ReadLine());
 
-            double sum = number1 + number2;
+            bool vihod = false;
+            do
+            {
+                Console.Write("Введите знак операции (+ * v): ");
+                char symbol = Convert.ToChar(Console.ReadLine());
 
-            Console.WriteLine($"Результат сложения: {number1} + {number2} = {sum}");
+                double sum = 0;
+                switch (symbol)
+                {
+                    case '+':
+                        sum = number1 + number2;
+                        Console.WriteLine($"Результат сложения: {number1} + {number2} = {sum}");
+                        break;
+                    case '*':
+                        sum = number1 * number2;
+                        Console.WriteLine($"Результат умножения: {number1} * {number2} = {sum}");
+                        break;
+                    case 'v':
+                        vihod = true;
+                        break;
+                    default:
+                        Console.WriteLine("Неверный знак! Для выхода, введите символ 'v'.");
+                        break;
+                }
+            } while (!vihod);
 
         }
     }
